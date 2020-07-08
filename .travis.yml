@@ -10,10 +10,10 @@ script:
     - docker run dado83/multi-docker npm test -- --coverage
 #Build production images      
 after_success:
-    - docker build -t dado83/client ./multi-client
-    - docker build -t dado83/nginx ./multi-nginx
-    - docker build -t dado83/server ./multi-server
-    - docker build -t dado83/worker ./multi-worker
+    - docker build -t dado83/multi-client ./multi-client
+    - docker build -t dado83/multi-nginx ./multi-nginx
+    - docker build -t dado83/multi-server ./multi-server
+    - docker build -t dado83/multi-worker ./multi-worker
     #Login to Docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_ID --password-stdin
     #Push these images to DockerHub
